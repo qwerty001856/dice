@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monofett&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+
+
+
+    <title>Dice</title>
+    <style>
+        body{
+            background-color: #434242;
+            font-family: 'Nerko One', cursive; 
+            font-family: Lobster;
+            font-family: Monofett;
+            font-family: Modak, cursive;
+            font-family: Teko, sans-serif;
+
+            color: #CFFDE1;
+        }
+        h1{
+            text-align: center;
+            margin-top: 40px;
+            font-size: 4rem;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:1rem;
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+            margin: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Refresh Me</h1>
+    <section>
+        <div class="cont">
+            <h2>Player 1</h2>
+            <img class="imgg1" src="dice1.jpg" alt="">
+        </div>
+        <div class="cont">
+            <h2>Player 2</h2>
+            <img class="imgg2"src="dice1.jpg" alt="">
+        </div>
+    </section>
+    <script>
+        let rand1=Math.random()*6;
+        rand1=Math.floor(rand1)+1;
+        let rand2=Math.random()*6;
+        rand2=Math.floor(rand2)+1;
+        document.querySelector('.imgg1').setAttribute('src','dice'+rand1+'.jpg');
+        document.querySelector('.imgg2').setAttribute('src','dice'+rand2+'.jpg');
+        if (rand1>rand2) {
+            document.querySelector('h1').innerHTML="Player 1 Wins";
+        }
+        else if (rand1<rand2) {
+            document.querySelector('h1').innerHTML="Player 2 Wins";
+        }
+        else{
+            document.querySelector('h1').innerHTML="Tie";
+        }
+
+    </script>
+</body>
+</html>
